@@ -1,0 +1,231 @@
+@import './mixins.scss';
+@import './variables.scss';
+
+.main-body {
+  @include themify($themes) {
+    background-color: themed('backgroundColor');
+  }
+}
+/* Colored containers used for page title */
+.colored-field {
+  padding: $padding_l1 0;
+  width: 100%;
+  @include themify($themes) {
+    background: themed('profileBackground');
+    & ~ div {
+      border-right: 3px solid themed('profileBackground');
+      border-left: 3px solid themed('profileBackground');
+    }
+  }
+  @media screen and (max-width: $mobile_breakpoint) {
+    min-height: 20vh;
+    padding-top: 8vh;
+    & > h1 {
+      position: relative;
+    }
+  }
+}
+
+/* Section component */
+.portfolio-section {
+  padding: $padding_l0;
+  @media screen and (max-height: $mobile_breakpoint) {
+    padding: 0;
+  }
+}
+
+/* Profile component */
+.profile-content {
+  height: calc(100vh - 2 * #{$padding_l0});
+  @include themify($themes) {
+    background-color: themed('profileBackground');
+    .profile-image {
+      position: fixed;
+      left: calc(50% - 75px);
+      top: calc(50% + 50px);
+      background: themed('profileImage');
+      height: 200px;
+      width: 150px;
+      background-size: contain;
+      &.stuck {
+        position: absolute;
+        top: calc(80vh - 3 * #{$padding_l0});
+      }
+      @media screen and (max-height: $mobile_breakpoint) {
+        position: absolute;
+        top: calc(50% + 50px) !important;
+      }
+    }
+  }
+}
+
+/* Navbar component */
+.nav {
+  border: 0px;
+  position: fixed;
+  opacity: 0.6;
+  top: 50%;
+  right: 5%;
+  width: fit-content;
+  align-content: flex-end;
+  z-index: 999;
+
+  &:hover {
+    opacity: 1;
+  }
+
+  .nav-link {
+    height: 38px;
+    width: 38px;
+
+    border-radius: 100%;
+    color: transparent;
+    margin: 6px;
+    padding: 0;
+    transition: width 0.4s ease-out;
+
+    span {
+      display: none;
+    }
+    @include themify($themes) {
+      border: 1px solid themed('profileBackground');
+      background: themed('backgroundColor');
+      &.active {
+        background: themed('activeColor');
+      }
+    }
+  }
+  &.navbar-broad {
+    .nav-link {
+      border-radius: 10px;
+      height: inherit;
+      width: 150px;
+      color: inherit;
+      padding: 6px;
+      transition: width 0.4s ease-in;
+    }
+    span {
+      display: block;
+    }
+  }
+}
+
+/* ThemeToggler component */
+.theme-toggler {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+  opacity: 0.5;
+  z-index: 999;
+
+  &:hover {
+    opacity: 1;
+  }
+  .toggle-item {
+    border-radius: 10px;
+    background-color: #fff;
+    @include themify($themes) {
+      border: 1px solid themed('borderColor');
+      &.active {
+        background: themed('activeColor');
+      }
+    }
+  }
+  @media screen and (max-height: $mobile_breakpoint) {
+    top: 5%;
+    bottom: initial;
+  }
+}
+
+.leisure-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: $padding_l1;
+  transition: all 0.8s;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: inherit;
+    transition: inherit;
+  }
+  & > h3 {
+    opacity: 0;
+    color: #fff;
+    text-decoration: underline;
+    -webkit-animation: 0.5s ease 0s normal forwards 1 fadeout;
+    animation: 0.5s ease 0s normal forwards 1 fadeout;
+  }
+  &:hover {
+    h3 {
+      opacity: 1;
+      -webkit-animation: 0.5s ease 0s normal forwards 1 fadein;
+      animation: 0.5s ease 0s normal forwards 1 fadein;
+    }
+  }
+}
+
+.leisure-image:hover::before {
+  transform: scale(0.98);
+}
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Loading component */
+
+.pulse-container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pulse-bubble {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  @include themify($themes) {
+    background: themed('profileBackground');
+  }
+}
+
+.pulse-bubble-1 {
+  animation: pulse 0.4s ease 0s infinite alternate;
+}
+.pulse-bubble-2 {
+  animation: pulse 0.4s ease 0.2s infinite alternate;
+}
+.pulse-bubble-3 {
+  animation: pulse 0.4s ease 0.4s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.25;
+    transform: scale(0.75);
+  }
+}

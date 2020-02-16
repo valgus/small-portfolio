@@ -1,0 +1,20 @@
+$themes: (
+  light: (
+    backgroundColor: #fff,
+    titleColor: #fff,
+    textColor: #350303,
+    borderColor: #aaa,
+    profileImage: url('../assets/img/main_rus.png') no-repeat left bottom,
+    profileBackground: #f00,
+    activeColor: #ffd700,
+  ),
+  dark: (
+    backgroundColor: #333,
+    textColor: #ddd,
+    titleColor: #0922b3,
+    borderColor: #333,
+    profileImage: url('../assets/img/main_sven_4.png') no-repeat left bottom,
+    profileBackground: #ffd700,
+    activeColor: #f00,
+  ),
+);

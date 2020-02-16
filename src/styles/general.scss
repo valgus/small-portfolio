@@ -1,0 +1,120 @@
+@import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import './mixins.scss';
+@import './variables.scss';
+html {
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+html,
+body,
+.app {
+  height: 100%;
+  font-size: 16px;
+}
+
+a {
+  cursor: pointer;
+  &.dropdown-a {
+    color: #222;
+  }
+}
+
+h4,
+h6,
+p,
+td,
+th,
+.btn:not(.toggle-item),
+a:not(.dropdown-a) {
+  @include themify($themes) {
+    color: themed('textColor');
+  }
+}
+
+h1 {
+  font-size: 35px;
+}
+h2 {
+  font-size: 25px;
+}
+h3 {
+  font-size: 20px;
+}
+
+h1,
+h2,
+h5 {
+  @include themify($themes) {
+    color: themed('titleColor');
+  }
+}
+h1,
+h2,
+h3,
+h5 {
+  font-weight: 1000;
+  font-family: $calligraffitti;
+}
+
+@media screen and (min-width: $mobile_breakpoint) {
+  h1 {
+    font-size: 45px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+
+  .visible-xs-block {
+    display: none;
+  }
+}
+
+.sticky {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 30%;
+}
+
+.full-height-image {
+  height: 100vh;
+  @media screen and (max-width: $mobile_breakpoint) {
+    height: 50vh;
+  }
+}
+
+.half-window-height {
+  min-height: 50vh;
+}
+
+.flex-center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: $mobile_breakpoint) {
+  .flex-row-xs {
+    flex-direction: row;
+  }
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.padding-top-20 {
+  padding-top: 20%;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
