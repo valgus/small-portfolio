@@ -12,8 +12,8 @@ const content = [
         Participated in the creation of a UI components library based on Ant Design. Developed several React Native components for the mobile application, introduced GraphQL for it.`,
     keywords:
       'React.JS, React Native, Redux, Ant Design, JavaScript, GraphQL (Apollo Client, Apollo Server, Apollo Cache in Memory), Git, Bitbucket',
-    initialDate: moment('01/10/2018').format('MMM-YYYY'),
-    lastDate: moment('01/06/2019').format('MMM-YYYY'),
+    initialDate: moment(new Date('10/01/2018')).format('MMM-YYYY'),
+    lastDate: moment(new Date('06/01/2019')).format('MMM-YYYY'),
   },
   {
     title: 'Full Stack Developer, Freelance',
@@ -23,15 +23,15 @@ const content = [
         Inherited a moderately-large codebase (>10k lines of codes), performed debugging and fixing of critical business use-cases.`,
     keywords:
       'Angular.JS, Bootstrap, JavaScript, Arango DB, AWS (Cognito, S3), Microsoft Graph, Git, Bitbucket, Jenkins, Kubernetes',
-    initialDate: moment('01/06/2018').format('MMM-YYYY'),
-    lastDate: moment('01/02/2020').format('MMM-YYYY'),
+    initialDate: moment(new Date('06/01/2018')).format('MMM-YYYY'),
+    lastDate: moment(new Date('02/01/2020')).format('MMM-YYYY'),
   },
   {
     title: 'Node JS Developer, Freelance',
     desc: `Developed two microservices that process video data from Youtube and Dropbox bucket, providing results to the main service by means of GraphQL mutations for further analysis.`,
     keywords: 'JavaScript, GraphQL, Youtube API, Dropbox API',
-    initialDate: moment('01/01/2018').format('MMM-YYYY'),
-    lastDate: moment('01/03/2018').format('MMM-YYYY'),
+    initialDate: moment(new Date('01/01/2018')).format('MMM-YYYY'),
+    lastDate: moment(new Date('03/01/2018')).format('MMM-YYYY'),
   },
   {
     title: 'Full Stack Developer, Freelance',
@@ -39,8 +39,8 @@ const content = [
         Migrated the project from Sails.js to Express.js. Migrated Stripe payment integration from front-end to back-end. Made requests to the main server more efficient by reducing the total number of requests per page and eliminating overhead of each request.`,
     keywords:
       'React, server-side rendering with React, Sails.js, Express.js, Stripe, Chart.js, Bitbucket, Git',
-    initialDate: moment('01/11/2017').format('MMM-YYYY'),
-    lastDate: moment('01/03/2018').format('MMM-YYYY'),
+    initialDate: moment(new Date('11/01/2017')).format('MMM-YYYY'),
+    lastDate: moment(new Date('03/01/2018')).format('MMM-YYYY'),
   },
 ];
 

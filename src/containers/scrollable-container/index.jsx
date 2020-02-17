@@ -21,12 +21,6 @@ class Scrollable extends Component {
       const insideComponent = cursor >= position.y && cursor <= position.bottom;
       if (insideComponent && this.current !== index) {
         this.current = index;
-        console.log(index);
-        console.log(
-          this.elPositions[index].y,
-          this.elPositions[index].bottom,
-          cursor
-        );
         return changeCurrentComponent(index);
       }
       if (insideComponent) return;
@@ -37,7 +31,6 @@ class Scrollable extends Component {
     const { elements } = this.props;
     this.elPositions = elements.map(el => {
       const { bottom, y } = document.getElementById(el).getBoundingClientRect();
-      console.log(y, bottom);
       return { y: y + window.scrollY, bottom: bottom + window.scrollY };
     });
   }

@@ -38,7 +38,6 @@ class Portfolio extends Component {
   render() {
     const { theme, shownPage } = this.state;
 
-    console.log(this.shownPage);
     return (
       <Scrollable
         elements={pages}
